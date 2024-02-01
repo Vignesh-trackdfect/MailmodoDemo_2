@@ -9,6 +9,7 @@
                         <include name="ContactsPage" priority="2" />
                         <include name="BulkCampaign" priority="3" />
                         <include name="MailValidation" priority="4" />
+
 			
 			<!-- // command methods
 			<include name="Login" priority="1" />
