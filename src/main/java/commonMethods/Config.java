@@ -56,7 +56,7 @@ public class Config extends Keywords {
 
 			ChromeOptions options = new ChromeOptions();
 			WebDriverManager.chromedriver().setup();
-			//options.addArguments("--headless");
+			options.addArguments("--headless");
 			options.addArguments("disable-notifications");
 		    options.addArguments("--disable-features=EnableNetworkServiceInChrome");
 			WebDriver driver = new ChromeDriver(options);
