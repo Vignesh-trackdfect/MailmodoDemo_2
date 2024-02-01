@@ -1,0 +1,1 @@
+{"uuid":"40aa0ced-7284-4c47-901d-7da507ff2773","name":"commonMethods.Testcases","children":["ad6b454f-a129-4b41-b93b-253c598e17cd"],"befores":[{"name":"getDataFromConfig","status":"passed","stage":"finished","description":"","steps":[],"attachments":[],"parameters":[],"start":1705042503502,"stop":1705042503608}],"afters":[],"start":1705042503428,"stop":1705042584067}

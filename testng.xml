@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite configfailurepolicy="continue" name="Suite" parallel="none">
+	<test name="Test" preserve-order="true">
+		<classes>
+			<class name="commonMethods.Testcases" />
+		</classes>
+		<methods>
+			<include name="Login" priority="1" />
+                        <include name="ContactsPage" priority="2" />
+                        <include name="BulkCampaign" priority="3" />
+                        <include name="MailValidation" priority="4" />
+			
+			<!-- // command methods
+			<include name="Login" priority="1" />
+                        <include name="ContactsPage" priority="2" />
+                        <include name="BulkCampaign" priority="3" />
+                        <include name="MailValidation" priority="4" />
+			<include name="journeyFlow" priority="5" />
+			<include name="ContactValidation" priority="6" />
+			-->
+		</methods>
+	</test>
+	<listeners>
+		<listener class-name="atu.testng.reports.listeners.ATUReportsListener" />
+		<listener
+			class-name="atu.testng.reports.listeners.ConfigurationListener" />
+		<listener class-name="atu.testng.reports.listeners.MethodListener" />
+	</listeners>
+</suite>
