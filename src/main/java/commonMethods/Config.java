@@ -61,6 +61,7 @@ public class Config extends Keywords {
 		    options.addArguments("--disable-features=EnableNetworkServiceInChrome");
 			WebDriver driver = new ChromeDriver(options);
 			System.out.println("Chrome Browser launched...");
+			
 			setDriver(driver);
 			Dimension dimension = new Dimension(1200, 800);
 			driver.manage().window().setSize(dimension);
