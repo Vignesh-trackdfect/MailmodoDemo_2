@@ -19,7 +19,7 @@ public class ContactsPage extends Keywords {
 		String passwd_1=Utils.getDataFromTestData("Mailmodo", "Password");
 		String csvfile=System.getProperty("user.dir")+"\\contacts.csv";
 		
-		driver.manage().window().maximize();
+		//driver.manage().window().maximize();
 		navigateUrl(driver,Url);
 		
 		waitForElement(driver,login_page);

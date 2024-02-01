@@ -18,7 +18,7 @@ public class Login extends Keywords{
 		String passwd_1=Utils.getDataFromTestData("Mailmodo", "Password");
 		
 		
-		driver.manage().window().maximize();
+		//driver.manage().window().maximize();
 		navigateUrl(driver,Url);
 	//	navigateUrl(driver,"https://manage.mailmodo.com/auth/login");
 		

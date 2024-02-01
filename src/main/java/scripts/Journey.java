@@ -21,7 +21,7 @@ public class Journey extends Keywords{
 		String passwd_1=Utils.getDataFromTestData("Mailmodo", "Password");
 		String webhook_Url=Utils.getDataFromTestData("Mailmodo", "Webhook Site");
 		//String webhook_data=Utils.getDataFromTestData("Mailmodo", "Webhook Data");
-		driver.manage().window().maximize();
+		//driver.manage().window().maximize();
 		navigateUrl(driver,Url);
 				
 		waitForElement1(driver,login_page);

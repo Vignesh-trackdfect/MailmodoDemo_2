@@ -28,7 +28,7 @@ public class BulkCampaign extends Keywords{
 		String fromname=randomString(4);
 		List<String> contactsList;
 		
-		driver.manage().window().maximize();
+		//driver.manage().window().maximize();
 		navigateUrl(driver,Url);
 		
 		waitForElement(driver,login_page);
@@ -362,7 +362,7 @@ public class BulkCampaign extends Keywords{
 		String passwd_1=Utils.getDataFromTestData("Mailmodo", "Password");
 		List<String> contactsList;
 		
-		driver.manage().window().maximize();
+		//driver.manage().window().maximize();
 		navigateUrl(driver,Url);
 		
 		waitForElement(driver,login_page);
