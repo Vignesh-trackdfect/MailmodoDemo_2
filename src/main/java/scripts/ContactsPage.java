@@ -17,7 +17,13 @@ public class ContactsPage extends Keywords {
 		String Url=TestNgXml.getdatafromExecution().get("ContactsPage");
 		String email_id=Utils.getDataFromTestData("Mailmodo", "Mail");
 		String passwd_1=Utils.getDataFromTestData("Mailmodo", "Password");
-		String csvfile=System.getProperty("user.dir")+"\\contacts.csv";
+		//String csvfile=System.getProperty("user.dir")+"\\contacts.csv";
+
+		String csvFilePath = "contacts.csv";
+                File csvFile = new File(csvFilePath);
+
+                // Now you can use csvFile.getPath() to get the absolute path to the CSV file
+                String csvfile = csvFile.getAbsolutePath();
 		
 		//driver.manage().window().maximize();
 		navigateUrl(driver,Url);
@@ -157,7 +163,7 @@ public class ContactsPage extends Keywords {
 		sendKeys(driver,new_list,listName1);
 		
 		uploadfile(driver,csvfile);
-		wait(driver,"3");
+		wait(driver,"1");
 		
 		click(driver,map_column);
 		
