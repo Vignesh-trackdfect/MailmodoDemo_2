@@ -8,7 +8,7 @@ import org.openqa.selenium.interactions.Actions;
 import commonMethods.Keywords;
 import commonMethods.TestNgXml;
 import commonMethods.Utils;
-
+import java.io.File;
 
 public class ContactsPage extends Keywords {
 
