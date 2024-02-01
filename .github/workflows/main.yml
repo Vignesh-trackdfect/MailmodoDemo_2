@@ -36,6 +36,7 @@ jobs:
             username: ${{ secrets.VIGNESH }}
             password: ${{ secrets.PASSWORD }}
             subject: 'Selenium Test Results'
+            from: 'vignesh.g@trackdfect.com'
             body: |
               The Selenium tests have completed.
 
