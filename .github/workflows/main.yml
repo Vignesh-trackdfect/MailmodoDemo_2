@@ -16,15 +16,3 @@ jobs:
           java-version: '11'
       - name: Run TestNG Tests
         run: mvn -B test -Dsurefire.suiteXmlFiles=testng.xml
-      - name: Send Email Notification
-        uses: dawidd6/action-send-mail@v2
-        with:
-          server_address: smtp.gmail.com
-          server_port: 465
-          username: ${{ secrets.VIGNESH }}
-          password: ${{ secrets.PASSWORD }}
-          subject: "Selenium Test Results"
-          to: sarath.s@trackdfect.com
-          from: vignesh.g@trackdfect.com
-          body: |
-            The Selenium test execution has completed.
