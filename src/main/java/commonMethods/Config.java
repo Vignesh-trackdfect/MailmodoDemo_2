@@ -56,15 +56,16 @@ public class Config extends Keywords {
 
 			ChromeOptions options = new ChromeOptions();
 			WebDriverManager.chromedriver().setup();
-			options.addArguments("--headless");
+			//options.addArguments("--headless");
 			options.addArguments("disable-notifications");
-		    options.addArguments("--disable-features=EnableNetworkServiceInChrome");
+		        options.addArguments("--disable-features=EnableNetworkServiceInChrome");
 			WebDriver driver = new ChromeDriver(options);
 			System.out.println("Chrome Browser launched...");
 			
 			setDriver(driver);
 			Dimension dimension = new Dimension(1200, 800);
-			driver.manage().window().setSize(dimension);
+			//driver.manage().window().setSize(dimension);
+			driver.manage().window().maximize();
 			Map<String, Object> prefs = new HashMap<String, Object>();
 			prefs.put("profile.default_content_setting_values.notifications", 1);
 			prefs.put("download.default_directory", System.getProperty("user.dir") + "\\DownloadedFiles");
