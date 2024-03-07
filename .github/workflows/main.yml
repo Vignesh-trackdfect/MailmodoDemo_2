@@ -1,25 +1,25 @@
-name: Run Maven Tests
+name: Run Automation Script
+
 on:
   push:
     branches:
       - main
+
 jobs:
-  run_tests:
+  build:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v2
+    - name: Checkout code
+      uses: actions/checkout@v2
 
-      - name: Set up JDK
-        uses: actions/setup-java@v2
-        with:
-          distribution: adopt
-          java-version: '11'
+    - name: Setup Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '14'
 
-      - name: Run TestNG Tests
-        run: mvn -B test -Dsurefire.suiteXmlFiles=testng.xml
+    - name: Install dependencies
+      run: npm install
 
-      - name: Generate Extent Reports
-        run: |
-          timeStamp=$(date +"%H%M")
-          mvn -B exec:java -Dexec.mainClass="com.example.GenerateExtentReports" -Dexec.args="$timeStamp"
+    - name: Run TestNG tests
+      run: mvn test -Dsurefire.suiteXmlFiles=testng.xml
