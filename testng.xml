@@ -1,26 +1,30 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<suite configfailurepolicy="continue" name="Suite" parallel="none">
-	<test name="Test" preserve-order="true">
-		<classes>
-			<class name="commonMethods.Testcases" />
-		</classes>
-		<methods>
-			
-			<include name="Login" priority="1" />
-			
-			<!-- // command methods
-			<include name="Login" priority="1" />
-                        <include name="ContactsPage" priority="2" />
-                        <include name="BulkCampaign" priority="3" />
-                        <include name="MailValidation" priority="4" />
-			<include name="journeyFlow" priority="5" />
-			-->
-		</methods>
-	</test>
-	<listeners>
-		<listener class-name="atu.testng.reports.listeners.ATUReportsListener" />
-		<listener
-			class-name="atu.testng.reports.listeners.ConfigurationListener" />
-		<listener class-name="atu.testng.reports.listeners.MethodListener" />
-	</listeners>
-</suite>
+name: Run Automation Script
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Set up Chrome
+        uses: nanasess/setup-chrome@v1
+
+      - name: Run TestNG tests
+        run: |
+          # Execute the tests using the testng.xml file
+          mvn test -Dsurefire.suiteXmlFiles=testng.xml -Dheadless=false
